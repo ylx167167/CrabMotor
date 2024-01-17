@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "motor.h": "c",
-        "hw_base.h": "c"
+        "hw_base.h": "c",
+        "lm75bd.h": "c"
     },
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "editor.formatOnSave": true,
