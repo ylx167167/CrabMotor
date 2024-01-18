@@ -4,7 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Controller/inc"
+                "${workspaceFolder}/Custom/Base",
+                "${workspaceFolder}/Custom/Device/inc",
+                "${workspaceFolder}/Custom/Controller/inc",
+                "D:\\MingGW\\mingw64\\x86_64-w64-mingw32\\include"
             ],
             "defines": [
                 "_DEBUG",

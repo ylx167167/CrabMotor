@@ -2,7 +2,13 @@
     "files.associations": {
         "motor.h": "c",
         "hw_base.h": "c",
-        "lm75bd.h": "c"
+        "lm75bd.h": "c",
+        "spimgr.h": "c",
+        "statu.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "as5047p.h": "c",
+        "as5047p_device.h": "c"
     },
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "editor.formatOnSave": true,
