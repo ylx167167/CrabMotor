@@ -7,12 +7,16 @@
                 "${workspaceFolder}/Custom/Base",
                 "${workspaceFolder}/Custom/Device/inc",
                 "${workspaceFolder}/Custom/Controller/inc",
+                "${workspaceFolder}/Stm32MCU/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Stm32MCU/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "${workspaceFolder}/Stm32MCU/Inc",
                 "D:\\MingGW\\mingw64\\x86_64-w64-mingw32\\include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "_IO"
             ]
         }
     ],

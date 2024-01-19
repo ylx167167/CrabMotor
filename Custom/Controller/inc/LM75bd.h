@@ -20,25 +20,25 @@
  * Author-QQ: 417838124
  */
 
-#ifndef __LM75_H
-#define __LM75_H
+#ifndef __LM75_H_
+#define __LM75_H_
 
 #include "i2c.h"
 #include "main.h"
 
-#define LM75B_CONF_OS_F_QUE_1 0b00000u
-#define LM75B_CONF_OS_F_QUE_2 0b01000u
-#define LM75B_CONF_OS_F_QUE_4 0b10000u
-#define LM75B_CONF_OS_F_QUE_6 0b11000u
+#define LM75B_CONF_OS_F_QUE_1        0b00000u
+#define LM75B_CONF_OS_F_QUE_2        0b01000u
+#define LM75B_CONF_OS_F_QUE_4        0b10000u
+#define LM75B_CONF_OS_F_QUE_6        0b11000u
 
-#define LM75B_CONF_OS_POL_L 0b00000u
-#define LM75B_CONF_OS_POL_H 0b00100u
+#define LM75B_CONF_OS_POL_L          0b00000u
+#define LM75B_CONF_OS_POL_H          0b00100u
 
-#define LM75B_CONF_OS_COMP_INT_CP 0b00000u
-#define LM75B_CONF_OS_COMP_INT_IT 0b00010u
+#define LM75B_CONF_OS_COMP_INT_CP    0b00000u
+#define LM75B_CONF_OS_COMP_INT_IT    0b00010u
 
 #define LM75B_CONF_OS_SHUTDOWN_FLASE 0b00000u
-#define LM75B_CONF_OS_SHUTDOWN_TRUE 0b00001u
+#define LM75B_CONF_OS_SHUTDOWN_TRUE  0b00001u
 
 uint8_t LM75B_Reset_Conf(void);
 uint8_t LM75B_Init(uint8_t conf);
