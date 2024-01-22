@@ -74,8 +74,8 @@ void AS5047_ReadData(uint16_t addr, uint16_t feedback) {
 
 void AS5047_PowerUp(void) {
   // 设置ABI模式，输出分辨1024.
-  AS5047_WriteData(i, SETTINGS1_AS5047P_nVOL_REG_ADD, 5);  // 0000 0101
-  AS5047_WriteData(i, SETTINGS2_AS5047P_nVOL_REG_ADD, 0);
+  AS5047_WriteData(SETTINGS1_AS5047P_nVOL_REG_ADD, 5);  // 0000 0101
+  AS5047_WriteData(SETTINGS2_AS5047P_nVOL_REG_ADD, 0);
 }
 
 void AS5047_Init(void) {
