@@ -22,26 +22,44 @@
  */
 #ifndef _MOTOR_H_
 #define _MOTOR_H_
+#include "pid.h"
+/********************  硬件配置区  ********************/
+#define Motor_Rated_Current (3000)  // 额定电流(mA)
+#define Motor_Cali_Current (2000)   // 校准电流(mA)
+typedef struct {
+  PID_T *pid;
+  /*	估计    */
+  int32_t est_speed;     // 估计速度
+  int32_t est_location;  // 估计位置
+  /*    输出	*/
+  int32_t foc_location;  // FOC矢量位置
+  int32_t foc_current;   // FOC矢量大小
+} CrabMotor_Conf;
 
 /**
  * @brief 刹车
  * @param void
  * @retval void
  **/
-void Crab_Motor_Sleep(void);
+void CrabMotor_Sleep(void);
 
 /**
  * @brief 刹车
  * @param void
  * @retval void
  **/
-void Crab_Motor_Brake(void);
+void CrabMotor_Brake(void);
 
 /**
  * @brief 初始化引脚和定时器
  * @param void
  * @retval void
  **/
-void Crab_Motor_Init(void);
-
+void CrabMotor_Init(void);
+/**
+ * @brief 电机电流控制函数
+ * @param
+ * @retval
+ **/
+void CrabMotor_ControlElectric();
 #endif
