@@ -4,19 +4,23 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Custom/Base",
-                "${workspaceFolder}/Custom/Device/inc",
-                "${workspaceFolder}/Custom/Controller/inc",
+                // "${workspaceFolder}/Custom/Base",
+                // "${workspaceFolder}/Custom/algorithm",
+                // "${workspaceFolder}/Custom/Base",
                 "${workspaceFolder}/Stm32MCU/Drivers/STM32F1xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Stm32MCU/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
                 "${workspaceFolder}/Stm32MCU/Inc",
-                "D:\\MingGW\\mingw64\\x86_64-w64-mingw32\\include"
+                // "D:\\MingGW\\mingw64\\x86_64-w64-mingw32\\include",
+                // "D:\\MingGW\\mingw64\\x86_64-w64-mingw32\\include"
+                "E:\\file\\stm32\\headfile\\include",
+                "E:\\file\\stm32\\headfile\\include\\linux",
+                "E:\\file\\stm32\\headfile\\include\\x86_64-linux-gnu",
+                "E:\\file\\stm32\\headfile\\x86_64-linux-gnu\\5\\include",
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE",
-                "_IO"
+                "_UNICODE"
             ]
         }
     ],

@@ -1,3 +1,4 @@
+
 /**
  * Created by preference on 2024/01/23
  * This program is for learning purposes only and may not be used for any other
@@ -20,38 +21,28 @@
  * Author-QQ: 417838124
  */
 
-#ifndef _STATU_H_
-#define _STATU_H_
+#ifndef _KERNEL_H_
+#define _KERNEL_H_
 
-enum SPI_REGISTER {
-  REGISTER_FAILE = -1,
-  HAS_BEEN_REGISTER = 0,
-  REGISTER_SUCCESS = 1,
-  SPIMGR_LIST_NULL,
-  SPIMGR_INIT_SUCCESS,
-  SPIMGR_INIT_NO_FIND,
-  SPIMGR_INIT_FAILE,
-  SPIMGR_WRITE_SUCCESS,
-  SPIMGR_WRITE_FAIL,
-  SPIMGR_WRITE_NO_FIND,
-  SPIMGR_READ_SUCCESS,
-  SPIMGR_READ_FAIL,
-  SPIMGR_READ_NO_FIND,
-};
+// C基本库
+#include <stdbool.h>  //Bool数据类型
+#include <stddef.h>
+#include <stdint.h>  //基本数据类型
+#include <stdio.h>   //变量类型,宏,输入输出函数
+#include <stdlib.h>  //变量类型,宏,通用工具函数
+#include <string.h>  //变量类型,宏,字符数组函数
 
-enum I2C_REGISTER {
-  REGISTER_FAILE = -1,
-  HAS_BEEN_REGISTER = 0,
-  REGISTER_SUCCESS = 1,
-  I2C_LIST_NULL,
-  I2C_INIT_SUCCESS,
-  I2C_INIT_NO_FIND,
-  I2C_INIT_FAILE,
-  I2C_WRITE_SUCCESS,
-  I2C_WRITE_FAIL,
-  I2C_WRITE_NO_FIND,
-  I2C_READ_SUCCESS,
-  I2C_READ_FAIL,
-  I2C_READ_NO_FIND,
-};
+// 应用相关头文件
+#include "hw_base.h"
+#include "statu.h"
+
+// 判断是不是为空指针
+#define assertptr(ptr)                     \
+  do {                                     \
+    if ((ptr) == NULL) {                   \
+      printf("Error Pointer is NULL\r\n"); \
+      return;                              \
+    }                                      \
+  } while (0)
+
 #endif

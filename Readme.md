@@ -1,1 +1,3 @@
-感谢：https://github.com/unlir/XDrive
+感谢：
+    https://github.com/peng-zhihui/Dummy-Robot
+    https://github.com/unlir/XDrive 
