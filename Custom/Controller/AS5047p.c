@@ -15,6 +15,9 @@
   HAL_GPIO_WritePin(AS5047_SPI_CS_GPIO_GROUP, AS5047_SPI_CS_PIN, GPIO_PIN_RESET)
 
 struct SpiBus_Element *as5047_element = NULL;
+
+AS5047p_AngleData_t angleData{0};
+
 void error_inf_loop() {
   while (1)
     ;
@@ -24,7 +27,6 @@ uint16_t Parity_bit_Calculate(uint16_t data_2_cal) {
   uint16_t parity_bit_value = 0;
 
   while (data_2_cal != 0) {  // 自低位开始统计奇偶
-    //(((⑤^④)^③)^②)^①——表达式1假设⑤和④不同，则⑤^④运算结果为1，表示有一个1。表达式1可以化成：((1^③)^②)^①——表达式2
     parity_bit_value ^= data_2_cal;
     data_2_cal >>= 1;
   }
@@ -70,18 +72,20 @@ void AS5047_ReadData(uint16_t addr, uint16_t feedback) {
   feedback = SPI_ReadWrite_OneByte(
       NOP_AS5047P_VOL_REG_ADD);  // ANGLECOM_AS5047P_VOL_REG_ADD=11 1111 1111
   feedback &= 0x3fff;
-
   // 此处可以做奇偶校验判断是否接收到正确数据，但是也可以不做，直接去掉15，14bit
   feedback &= 0x3fff;
 }
 
 void AS5047_PowerUp(void) {
+  /*	硬件初始化  GPIO以及SPI功能*/
   // 设置ABI模式，输出分辨1024.
   AS5047_WriteData(SETTINGS1_AS5047P_nVOL_REG_ADD, 5);  // 0000 0101
   AS5047_WriteData(SETTINGS2_AS5047P_nVOL_REG_ADD, 0);
+  /*	*/
 }
 
 void AS5047_Init(void) {
+  /*	注册AS5047P到SPI 总线上   */
   struct SpiBus_TypeDef *type =
       (struct SpiBus_TypeDef *)malloc(sizeof(struct SpiBus_TypeDef));
   type = (struct SpiBus_TypeDef *)malloc(sizeof(struct SpiBus_TypeDef));

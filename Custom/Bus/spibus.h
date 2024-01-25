@@ -90,5 +90,5 @@ void Spi_UnRegister_Bus();
  * @param
  * @retval
  **/
-void Spi_UnRegister_Device(int devidx);
+int32_t SpiBus_UnRegister_Device(int devidx);
 #endif

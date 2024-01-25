@@ -30,7 +30,10 @@
         "stdbool.h": "c",
         "sysinfo.h": "c",
         "bus.h": "c",
-        "i2cbus.h": "c"
+        "i2cbus.h": "c",
+        "pid.h": "c",
+        "tim.h": "c",
+        "tb67h450.h": "c"
     },
     "C_Cpp.clang_format_fallbackStyle": "Google",
     // "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Linux, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: true, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false, AlignConsecutiveAssignments: false, AlignConsecutiveDeclarations: AcrossComments, AlignConsecutiveMacros: AcrossEmptyLines, AlignTrailingComments.Kind: Always, AlignEscapedNewlines: Left, BinPackArguments: true, BinPackParameters: true}",

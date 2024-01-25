@@ -1,8 +1,7 @@
 #ifndef _I2CBUS_H_
 #define _I2CBUS_H_
-#include "i2c.h"
-#include "main.h"
-
+#include "Base/kernel.h"
+#include "statu.h"
 /*I2C  8bit地址操作*/
 typedef uint8_t (*I2C_DEVICE_8WRITE)(uint8_t, uint16_t, uint16_t);
 typedef uint8_t (*I2C_DEVICE_8READ)(uint8_t, uint16_t, uint16_t);
@@ -63,7 +62,7 @@ struct I2CBus_Element *I2CBus_Register_Device(int slaveaddr,
  * @param
  * @retval
  **/
-void I2CBus_UnRegister_Device(int slaveaddr);
+int32_t I2CBus_UnRegister_Device(int slaveaddr);
 
 /**
  * @brief I2C写设备
@@ -71,14 +70,16 @@ void I2CBus_UnRegister_Device(int slaveaddr);
  *          buf 写入数据
  * @retval 写入成功或者失败 I2CMGR_WRITE_SUCCESS I2CMGR_WRITE_FAIL
  **/
-uint8_t I2CBus_WriteData(struct I2CBus_Element *ele, struct I2CBus_WR_Buf *buf);
+enum I2C_BUS_FLAG I2CBus_WriteData(struct I2CBus_Element *ele,
+                                   struct I2CBus_WR_Buf *buf);
 
 /**
  * @brief I2C读设备
  * @param ele 设备句柄
  * @retval 判断 读写是否成功
  **/
-uint8_t I2CBus_ReadData(struct I2CBus_Element *ele, struct I2CBus_WR_Buf *buf);
+enum I2C_BUS_FLAG I2CBus_ReadData(struct I2CBus_Element *ele,
+                                  struct I2CBus_WR_Buf *buf);
 
 /**
  * @brief 卸载i2c总线
@@ -87,4 +88,17 @@ uint8_t I2CBus_ReadData(struct I2CBus_Element *ele, struct I2CBus_WR_Buf *buf);
  **/
 void I2C_UnRegister_Bus();
 
+/**
+ * @brief 通过slaveaddr卸载 i2c设备
+ * @param
+ * @retval
+ **/
+int32_t I2CBus_UnRegister_Device(int slaveaddr);
+
+/**
+ * @brief 遍历打印I2CBUS_list
+ * @param
+ * @retval
+ **/
+void I2CBus_Printf_List(void);
 #endif

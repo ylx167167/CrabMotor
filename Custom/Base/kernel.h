@@ -24,7 +24,7 @@
 #ifndef _KERNEL_H_
 #define _KERNEL_H_
 
-// C基本库
+/*  C基本库   */
 #include <stdbool.h>  //Bool数据类型
 #include <stddef.h>
 #include <stdint.h>  //基本数据类型
@@ -32,11 +32,11 @@
 #include <stdlib.h>  //变量类型,宏,通用工具函数
 #include <string.h>  //变量类型,宏,字符数组函数
 
-// 应用相关头文件
+/*	 应用相关头文件   */
 #include "hw_base.h"
+#include "sin_map.h"
 #include "statu.h"
-
-// 判断是不是为空指针
+/*  判断是不是为空指针	*/
 #define assertptr(ptr)                     \
   do {                                     \
     if ((ptr) == NULL) {                   \
@@ -44,5 +44,26 @@
       return;                              \
     }                                      \
   } while (0)
+
+/**
+ * @brief 自定义打印
+ * @param1打开打印 0关闭所有打印
+ *  #define DBG(format,...)  printf("[%s][%05d]:"format, __func__, __LINE__,
+    ##__VA_ARGS__) //打印函数名，行号 #define DBG(format,...)
+    printf("["__FILE__"][%s][%05d]: "format, __func__, __LINE__,
+    ##__VA_ARGS__)//打印文件名，函数名，行号
+ * @retval
+ **/
+#define DEBUG 1
+#if DEBUG
+#define CRAB_PRINTF(format, ...)   \
+  {                                \
+    printf(format, ##__VA_ARGS__); \
+    printf("\r\n");                \
+  }  // 正常打印
+
+#else
+#define CRAB_PRINTF(format, ...)
+#endif
 
 #endif

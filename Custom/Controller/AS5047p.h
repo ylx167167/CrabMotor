@@ -22,12 +22,44 @@
 #define SETTINGS2_AS5047P_nVOL_REG_ADD 0x0019
 #define RED_AS5047P_VOL_nREG_ADD 0x001a
 
+struct AS5047p {
+  uint16_t angle_data;     // 角度数据
+  uint16_t rectify_angle;  // 校准的角度数据
+  bool rectify_valid;      // 校准数据有效标志
+};
+
+struct AS5047p_AngleData_t {
+  uint16_t rawAngle;        // raw data
+  uint16_t rectifiedAngle;  // calibrated rawAngle data
+  bool rectifyValid;
+};
+
+/**
+ * @brief  AS5047 初始化
+ * @param
+ * @retval
+ **/
 void AS5047_Init(void);
 
+/**
+ * @brief 将指定位置设置为零。
+ * @param
+ * @retval
+ **/
 void AS5047_SetZeroPosition();
-uint16_t AS5047_Get_ZeroPosition();
-uint16_t AS5047_Get_ERRFL();
-uint16_t AS5047_WriteData();
-uint16_t AS5047_ReadData();
 
+/**
+ * @brief 获取初始位置
+ * @param
+ * @retval
+ **/
+uint16_t AS5047_Get_ZeroPosition();
+
+/**
+ * @brief 获取角度
+ * @param
+ * @retval
+ **/
+
+void AS5047_Get_AngleData();
 #endif

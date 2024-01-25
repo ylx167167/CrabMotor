@@ -36,9 +36,9 @@
 #define HW_APWM_GPIO_GROUP
 #define HW_APWM_PIN
 #define HW_APWM_CHANNEL
-#define HW_APWM_GPIO_GROUP
-#define HW_APWM_PIN
-#define HW_APWM_CHANNEL
+#define HW_BPWM_GPIO_GROUP
+#define HW_BPWM_PIN
+#define HW_BPWM_CHANNEL
 
 /*	AS5047_SPI采集(GPIO) */
 #define AS5047_SPI_CS_GPIO_CLK_ENABLE()

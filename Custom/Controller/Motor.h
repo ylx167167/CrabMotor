@@ -26,6 +26,9 @@
 /********************  硬件配置区  ********************/
 #define Motor_Rated_Current (3000)  // 额定电流(mA)
 #define Motor_Cali_Current (2000)   // 校准电流(mA)
+
+/********************  软件配置区  ********************/
+#define SOFT_DIVIDE_NUM 256;
 typedef struct {
   PID_T *pid;
   /*	估计    */
@@ -37,7 +40,14 @@ typedef struct {
 } CrabMotor_Conf;
 
 /**
- * @brief 刹车
+ * @brief 初始化引脚和定时器
+ * @param void
+ * @retval void
+ **/
+void CrabMotor_Init(void);
+
+/**
+ * @brief 睡眠
  * @param void
  * @retval void
  **/
@@ -50,12 +60,6 @@ void CrabMotor_Sleep(void);
  **/
 void CrabMotor_Brake(void);
 
-/**
- * @brief 初始化引脚和定时器
- * @param void
- * @retval void
- **/
-void CrabMotor_Init(void);
 /**
  * @brief 电机电流控制函数
  * @param

@@ -1,10 +1,10 @@
 #ifndef _BUS_H_
 #define _BUS_H_
-#include stdio.h
-
+typedef void (*BusUnMount)(void);  // 总线卸载命令
 struct BUS_Type {
   char* name;
   void* data;
+  BusUnMount unmount;
 };
 
 struct BUS_Node {
@@ -41,4 +41,10 @@ void BusDelete(const char* busname);
  **/
 
 void BusCheck(const char* busname);
+/**
+ * @brief 打印节点
+ * @param
+ * @retval
+ **/
+void BusPrintfList();
 #endif
